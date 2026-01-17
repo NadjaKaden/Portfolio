@@ -6,7 +6,7 @@
     /* --accent-blue: #4C6EF5; Staubiges Blau */
     /* --accent-green: #7BAE7F;Salbeigrün */ 
 
-    --header-footer: #2A2A2A; /* Etwas helleres Anthrazit */
+    --header-footer: var(--bg); /* Etwas helleres Anthrazit */
 
     --light-gray: #EDEDED;
     --dark-gray: #555555;
@@ -17,59 +17,82 @@
     --transition: 0.25s ease;
 }
 .header {
-    background: var(--header-footer);
+    background: var(--bg);
     color: var(--text);
-    text-align: center;
-}
-.logo {
-  max-width: 100%;
-  height: auto;
+    height: 130px;
+    display: flex;            /* WICHTIG! sonst wirken align/justify nicht */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .footer {
-    background: var(--header-footer);
+    background: var(--bg);
     color: var(--text);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    height: 130px;            /* gleiche Höhe wie Header */
+    display: flex;            /* für perfekte Zentrierung */
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+} 
+
+.footer .container {
+    padding: 2;
+    margin: 0;
 }
+
 body {
+    margin: 0;
+    padding: 0;
     background: var(--bg);
     color: var(--text);
     font-family: system-ui, sans-serif;
     line-height: 1.6;
+    height: 100%;
 }
+
 /* ------------------------------
    Navigation
 ------------------------------ */
 .navbar {
     background: var(--header-footer);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    width: 100%;
 }
 
 .nav-container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 2rem 0;
     display: flex;
-    justify-content: space-between; /* Logo links, Links rechts */
-    align-items: center;
+    justify-content: center;   /* Alles in der Mitte */
+    align-items: center;       /* Vertikal zentriert */
+    gap: 0rem;                 /* Abstand zwischen Logo und Links */
 }
 
 .nav-logo {
     font-size: 2.0rem;
     font-weight: bold;
     color: var(--text); /* warmweiß */
+    
+}
+.nav-logo img {
+    height: 200px; /* Basisgröße */
+    width: auto;
+    transform-origin: center;
+    display: block;
+    transform: translate(-35px, 5px)
+    
 }
 
 .nav-links {
     list-style: none;
-    display: flex;      /* nebeneinander */
-    gap: 2rem;          /* Abstand zwischen Links */
+    display: flex;
+    gap: 2rem;                 /* Abstand zwischen den Links */
+    align-items: center;
+    justify-content: center;   /* Links zentrieren */
 }
+
 
 .nav-links a {
     text-decoration: none;
@@ -103,4 +126,7 @@ body {
 }
 html {
     scroll-behavior: smooth;
+}
+main {
+    min-height: calc(100vh - 80px - 120px);
 }
