@@ -1,0 +1,132 @@
+:root {
+    --bg: #1E1E1E;          /* Haupt-Background: Anthrazit */
+    --text: #F5F5F5;        /* Helles, warmes Weiß für gute Lesbarkeit */
+
+    /* --accent: #FF6F61;      /* Koralle */
+    /* --accent-blue: #4C6EF5; Staubiges Blau */
+    /* --accent-green: #7BAE7F;Salbeigrün */ 
+
+    --header-footer: var(--bg); /* Etwas helleres Anthrazit */
+
+    --light-gray: #EDEDED;
+    --dark-gray: #555555;
+
+    --max-width: 900px;
+    --radius: 8px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.25);
+    --transition: 0.25s ease;
+}
+.header {
+    background: var(--bg);
+    color: var(--text);
+    height: 130px;
+    display: flex;            /* WICHTIG! sonst wirken align/justify nicht */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer {
+    background: var(--bg);
+    color: var(--text);
+    height: 130px;            /* gleiche Höhe wie Header */
+    display: flex;            /* für perfekte Zentrierung */
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+} 
+
+.footer .container {
+    padding: 2;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+    height: 100%;
+}
+
+/* ------------------------------
+   Navigation
+------------------------------ */
+.navbar {
+    background: var(--header-footer);
+    width: 100%;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;   /* Alles in der Mitte */
+    align-items: center;       /* Vertikal zentriert */
+    gap: 0rem;                 /* Abstand zwischen Logo und Links */
+}
+
+.nav-logo {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: var(--text); /* warmweiß */
+    
+}
+.nav-logo img {
+    height: 200px; /* Basisgröße */
+    width: auto;
+    transform-origin: center;
+    display: block;
+    transform: translate(-35px, 5px)
+    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;                 /* Abstand zwischen den Links */
+    align-items: center;
+    justify-content: center;   /* Links zentrieren */
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text); /* warmweiß */
+    font-weight: 500;
+    padding:0,5rem 0;
+    transition: var(--transition);
+    position: relative;
+}
+
+/* Hover */
+.nav-links a:hover {
+    color: var(--accent); /* Koralle */
+}
+
+/* Active Link (Scroll-Spy) */
+.nav-links a.active {
+    color: var(--accent); /* Koralle */
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+html {
+    scroll-behavior: smooth;
+}
+main {
+    min-height: calc(100vh - 80px - 120px);
+}
