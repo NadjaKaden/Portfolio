@@ -19,8 +19,11 @@
 .header {
     background: var(--header-footer);
     color: var(--text);
-    padding: 4rem 0;
     text-align: center;
+}
+.logo {
+  max-width: 100%;
+  height: auto;
 }
 
 .footer {
@@ -97,4 +100,7 @@ body {
     height: 3px;
     background: var(--accent);
     border-radius: 2px;
+}
+html {
+    scroll-behavior: smooth;
 }
