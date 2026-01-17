@@ -1,0 +1,129 @@
+/* ------------------------------
+   Farbpalette (Palette 2)
+------------------------------ */
+:root {
+    --bg: #2b3557;
+    --text: #222222;
+
+    --accent: #FF6F61;      /* Koralle */
+    --accent-blue: #4C6EF5; /* Staubiges Blau */
+    --accent-green: #7BAE7F;/* Salbeigrün */
+
+    --light-gray: #EDEDED;
+    --dark-gray: #555555;
+
+    --max-width: 900px;
+    --radius: 8px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --transition: 0.25s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ------------------------------
+   Header
+------------------------------ */
+.header {
+    background: var(--text);
+    color: var(--dark-gray);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ------------------------------
+   Sektionen
+------------------------------ */
+section {
+    margin: 3rem 0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--accent-blue);
+}
+
+/* Über mich */
+.about-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.about-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* ------------------------------
+   Projekte
+------------------------------ */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: var(--shadow);
+    border-left: 6px solid var(--accent-green);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border-left-color: var(--accent);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: var(--radius);
+    margin-bottom: 0.8rem;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: var(--text);
+    margin-top: 3rem;
+    border-top: 1px solid #08273b;
+}
+
+.footer p {
+    color: var(--dark-gray);
+}
